@@ -28,7 +28,7 @@ module.exports.CoverModel = class CoverModel{
     cloudinary.v2.uploader.upload(data.image.path, {public_id: `cover/${manga.name}_cover`}, (error, result) => {
       if(result){
         console.log(result);
-        manga.cover = result.url;
+        manga.cover = result.secure_url;
         fs.unlinkSync(data.image.path);
         cb(mangaID, manga);  
       }else{

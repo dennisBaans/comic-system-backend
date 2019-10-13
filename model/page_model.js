@@ -49,8 +49,9 @@ module.exports.PageModel = class PageModel{
         {public_id: `${mangaName}/${chapter.number}/[Baka]_${mangaName}_${chapter.number}_${index}`}, (error, result) => {
 
         if(result){
+          console.log(result);
           done++;
-          pagesData[index] = {'url': result.url, 'cloud_id': result.public_id};
+          pagesData[index] = {'url': result.secure_url, 'cloud_id': result.public_id};
           fs.unlinkSync(page.path);
           if(done >= pages.length){
             cb(pagesData);  
