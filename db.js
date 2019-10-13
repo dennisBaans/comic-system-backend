@@ -18,8 +18,6 @@ module.exports.DB = class DB{
 
     constructor(){
         let config = process.env.DATABASE_URL ? configProd : configDev;
-        console.log("DB Config:");
-        console.log(config);
         this.pool = new pg.Pool(config);
 
     }

@@ -180,7 +180,7 @@ module.exports.UserAccount = class UserAccount{
       username: user.username,
       role_id: user.user_role_id,
       exp: parseInt(expiry.getTime() / 1000),
-    }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE! 
+    }, process.env.MY_SECRET); // DO NOT KEEP YOUR SECRET IN THE CODE! 
   }
 
 }
