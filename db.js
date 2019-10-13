@@ -1,18 +1,25 @@
 var pg = require('pg');
 
-const config = {
+const configDev = {
     user: 'itachidhdr',
     database: 'comic-system',
-    password: 'narutodhdr',
+    password: process.env.DB_PW,
     port: '5432',
     max: 100,
     idleTimeoutMillis: 30000
 }
 
+const configProd = {
+    connectionString: process.env.DATABASE_URL,
+        ssl: true
+}
+
 module.exports.DB = class DB{
 
     constructor(){
-
+        let config = process.env.DATABASE_URL ? configProd : configDev;
+        console.log("DB Config:");
+        console.log(config);
         this.pool = new pg.Pool(config);
 
     }

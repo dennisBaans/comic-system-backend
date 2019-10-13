@@ -5,7 +5,7 @@ module.exports.AuthControle = class AuthControle {
     constructor(){
 
         this.auth = jwt({
-            secret: 'MY_SECRET',
+            secret: process.env.MY_SECRET,
             userProperty: 'payload'
         });
 
