@@ -16,6 +16,7 @@ var mangaController = require('./controller/manga_controller'),
     read_controller = require('./controller/read_controller'),
     blog_controller = require('./controller/blog_controller'),
     watchlist_controller = require('./controller/watchList_controller'),
+    features_controller = require('./controller/feature_controller'),
     visableController = require('./controller/visable_controller');
 
 const server = express();
@@ -44,6 +45,7 @@ server.use('/api', counterController.router);
 server.use('/api', read_controller.router);
 server.use('/api', blog_controller.router);
 server.use('/api', watchlist_controller.router);
+server.use('/api', features_controller.router);
 //server.use('/api', ratingController.router);
 
 // error handlers

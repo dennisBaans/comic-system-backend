@@ -10,7 +10,7 @@ var express = require('express'),
     cover = new CoverModel();
 
 
-    var upload = multer({ dest: 'cover/' });
+    const upload = multer({ dest: 'cover/' });
 
 // GET all Mangas
 router.get('/mangas', authControle.auth,(req, res) => {

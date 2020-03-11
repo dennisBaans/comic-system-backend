@@ -2,7 +2,7 @@ var pg = require('pg');
 
 const configDev = {
     user: 'itachidhdr',
-    database: 'comic-system',
+    database: 'comicsystem',
     password: process.env.DB_PW,
     port: '5432',
     max: 100,
@@ -18,7 +18,6 @@ module.exports.DB = class DB{
 
     constructor(){
         let config = process.env.DATABASE_URL ? configProd : configDev;
-        console.log(config);
         this.pool = new pg.Pool(config);
 
     }
