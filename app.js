@@ -28,7 +28,7 @@ var corsOption = {
   origin: '*',
   optionSuccesStatus: 200
 };
-server.use(cors());
+server.use(cors(corsO));
 
 server.use('/api/covers/tmp', express.static('uploads'));
 // API Controller
